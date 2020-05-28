@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Mensa App</string>
+    <string name="activity_title">Heute in der Uni Mensa</string>
+    <string name="app_tag_line">Was gib es denn heute leckeres in der Mensa?</string>
+</resources>
