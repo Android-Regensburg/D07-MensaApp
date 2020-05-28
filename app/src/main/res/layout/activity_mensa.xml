@@ -4,17 +4,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="10dp"
     android:orientation="vertical"
+    android:padding="10dp"
     tools:context=".MensaActivity">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/menu_item_list"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:scrollbars="vertical"
-            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+    <TextView
+        android:id="@+id/today_label"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_today_placeholder"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="bold"
+        android:textAlignment="center" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/app_description"
+        android:textAlignment="center" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/menu_item_list"
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="vertical"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 
 
 </LinearLayout>

@@ -2,4 +2,7 @@
     <string name="app_name">Mensa App</string>
     <string name="activity_title">Heute in der Uni Mensa</string>
     <string name="app_tag_line">Was gib es denn heute leckeres in der Mensa?</string>
+    <string name="app_description">Heute gibt es in der Mensa</string>
+    <string name="app_today_placeholder">Today</string>
+    <string name="app_costs_label">Kosten</string>
 </resources>

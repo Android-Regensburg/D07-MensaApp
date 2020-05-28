@@ -1,7 +1,6 @@
 package de.ur.mi.android.mensaapp.ui;
 
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +14,11 @@ import java.util.ArrayList;
 import de.ur.mi.android.mensaapp.R;
 import de.ur.mi.android.mensaapp.mensa.MenuItem;
 
+/**
+ * Dieser Adapter verwaltet eine Liste von MenuItems und stellt diese für die Darstellung in einem
+ * RecyclerView bereit (Vgl. auch z.B. PrimeChecker-Demo). Für die Darstellung der einzelnen Elemente
+ * wird das Layout aus res/layout/menu_item_entry.xml verwendet.
+ */
 public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuItemViewHolder> {
 
     private ArrayList<MenuItem> items;
@@ -35,7 +39,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuItemViewHo
     }
 
     public void setMenuItems(ArrayList<MenuItem> items) {
-        Log.d("MENSA_APP", "Setting new items (size => " +items.size() + ")");
         this.items = items;
         this.notifyDataSetChanged();
     }
@@ -43,7 +46,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuItemViewHo
     @NonNull
     @Override
     public MenuItemViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        Log.d("MENSA_APP", "in: onCreateViewHolder");
         View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.menu_item_entry, parent, false);
         MenuItemViewHolder vh = new MenuItemViewHolder(v);
         return vh;
@@ -51,14 +53,10 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuItemViewHo
 
     @Override
     public void onBindViewHolder(@NonNull MenuItemViewHolder holder, int position) {
-        Log.d("MENSA_APP", "in: onBindViewHolder");
         MenuItem item = items.get(position);
         TextView name = holder.entryView.findViewById(R.id.menu_item_name);
-        TextView category = holder.entryView.findViewById(R.id.menu_item_category);
         TextView costs = holder.entryView.findViewById(R.id.menu_item_costs);
-
         name.setText(item.name);
-        category.setText(item.category);
         StringBuilder costStringBuilder = new StringBuilder();
         costStringBuilder.append(item.costForStudentsInEuro);
         costStringBuilder.append(" € (Studierende), ");
@@ -71,7 +69,6 @@ public class MenuAdapter extends RecyclerView.Adapter<MenuAdapter.MenuItemViewHo
 
     @Override
     public int getItemCount() {
-        Log.d("MENSA_APP", "in: getItemCount");
         return items.size();
     }
 }
